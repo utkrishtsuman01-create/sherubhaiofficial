@@ -18,6 +18,7 @@ import {
   Compass,
   GraduationCap,
   Download,
+  Play,
 } from "lucide-react";
 
 const instagramUrl = "https://www.instagram.com/sherubhai.officialo/";
