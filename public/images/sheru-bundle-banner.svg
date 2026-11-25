@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+<title id="title">Sheru Bhai 5000+ AI Stories Bundle</title><desc id="desc">A ready-to-use collection of over 5000 AI story videos for creators, priced at 149 rupees. No editing required.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#08070b"/><stop offset=".55" stop-color="#17102a"/><stop offset="1" stop-color="#07080d"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#f5a623" stop-opacity=".5"/><stop offset="1" stop-color="#f5a623" stop-opacity="0"/></radialGradient>
+ <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#fff0a3"/><stop offset=".35" stop-color="#ffc52e"/><stop offset="1" stop-color="#e87513"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+ </defs>
+ <rect width="1600" height="1050" rx="36" fill="url(#bg)"/><ellipse cx="450" cy="490" rx="520" ry="500" fill="url(#glow)"/>
+ <path d="M35 35H1565V1015H35Z" fill="none" stroke="#f7bd39" stroke-opacity=".7" stroke-width="3"/>
+ <path d="M70 90H1530" stroke="#f7bd39" stroke-opacity=".25" stroke-width="2"/>
+ <text x="100" y="145" fill="#ffd76b" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="9">SHERU BHAI PRESENTS</text>
+ <image href="/images/sheru-logo.webp" x="75" y="205" width="620" height="620" preserveAspectRatio="xMidYMid meet"/>
+ <text x="755" y="270" fill="#fff" font-family="Arial,sans-serif" font-size="38" font-weight="700" letter-spacing="5">THE CREATOR'S MEGA COLLECTION</text>
+ <text x="745" y="405" fill="url(#gold)" font-family="Arial,sans-serif" font-size="124" font-weight="900">5000+</text>
+ <text x="755" y="475" fill="#fff" font-family="Arial,sans-serif" font-size="58" font-weight="900">AI STORY VIDEOS</text>
+ <text x="755" y="540" fill="#d7d1e0" font-family="Arial,sans-serif" font-size="31">Ready to use. No editing required.</text>
+ <g font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#fff">
+  <rect x="755" y="600" width="350" height="62" rx="31" fill="#ffffff" fill-opacity=".09" stroke="#f8bd37"/><text x="930" y="640" text-anchor="middle">✓ READY-TO-POST</text>
+  <rect x="1125" y="600" width="360" height="62" rx="31" fill="#ffffff" fill-opacity=".09" stroke="#f8bd37"/><text x="1305" y="640" text-anchor="middle">✓ MULTIPLE THEMES</text>
+  <rect x="755" y="680" width="350" height="62" rx="31" fill="#ffffff" fill-opacity=".09" stroke="#f8bd37"/><text x="930" y="720" text-anchor="middle">✓ SAVE CREATION TIME</text>
+  <rect x="1125" y="680" width="360" height="62" rx="31" fill="#ffffff" fill-opacity=".09" stroke="#f8bd37"/><text x="1305" y="720" text-anchor="middle">✓ BEGINNER FRIENDLY</text>
+ </g>
+ <text x="755" y="855" fill="#bdb5c8" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="4">ONE-TIME PRICE</text>
+ <text x="745" y="970" fill="url(#gold)" font-family="Arial,sans-serif" font-size="128" font-weight="900">₹149</text>
+ <text x="1135" y="950" fill="#fff" font-family="Arial,sans-serif" font-size="28" font-weight="700">PAYMENT</text><text x="1135" y="990" fill="#ffc844" font-family="Arial,sans-serif" font-size="28" font-weight="700">COMING SOON</text>
+</svg>
