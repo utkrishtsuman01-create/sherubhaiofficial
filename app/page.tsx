@@ -1,6 +1,87 @@
 import Link from "next/link";
-import {ArrowRight,Instagram,Sparkles,Crown} from "lucide-react";
-const insta="https://www.instagram.com/sherubhai.officialo/";
-const avatar="/images/sheru-logo.webp";
-const cards=[["ADVENTURE & MYSTERY","🦁","Big missions. Wild twists.","adventure"],["COMEDY & DRAMA","😂","Funny moments and family drama.","comedy"],["SUSPENSE & LOVE","💖","Unexpected bonds and cinematic moments.","love"],["SCHOOL & COLLEGE","🎓","Classroom madness and desi stories.","school"]];
-export default function HomePage(){return <main className="new-sheru"><div className="top-strip">✦ THE SHERU BHAI UNIVERSE IS HERE ✦ STORIES WITH ATTITUDE ✦</div><header className="new-nav"><Link href="/" className="new-brand"><img src={avatar} alt="Sheru Bhai"/><span><b>SHERU BHAI</b><small>OFFICIAL UNIVERSE</small></span></Link><nav><a href="#stories">THE STORIES</a><a href="#bundle">MEGA BUNDLE</a><a href="#instagram">INSTAGRAM</a></nav><Link className="nav-follow" href={insta} target="_blank">FOLLOW SHERU ↗</Link></header><section className="new-hero"><div className="hero-copy"><div className="hero-pill"><Sparkles size={14}/> WELCOME TO SHERU BHAI&apos;S WORLD</div><h1>ONE LION.<br/><em>ENDLESS</em><br/><strong>STORIES.</strong></h1><p>From royal entrances to crazy desi moments — step into a colourful universe where every reel has a story and every story has Sheru.</p><div className="hero-buttons"><a className="hot-button" href="#bundle">EXPLORE THE MEGA BUNDLE <ArrowRight size={16}/></a><Link className="outline-button" href={insta} target="_blank"><Instagram size={16}/> FOLLOW ON INSTAGRAM</Link></div><div className="hero-numbers"><b>1000+ <small>AI STORY REELS</small></b><b>4 <small>STORY WORLDS</small></b><b>ONE <small>LEGENDARY LION</small></b></div></div><div className="hero-visual"><div className="hero-halo"/><div className="hero-avatar"><img src={avatar} alt="Sheru Bhai crowned lion mascot"/></div><div className="hero-sticker"><Crown/> THE KING HAS ARRIVED</div><div className="hero-sticker second">🐾 BIG STORIES. BIGGER ENERGY.</div></div></section><div className="new-ticker">🦁 SHERU BHAI OFFICIAL　✦　1000+ AI STORY REELS　✦　DESI DRAMA　✦　BIG SCREEN ENERGY　✦　</div><section id="stories" className="new-section"><div className="new-heading"><div><small>✦ WELCOME TO THE UNIVERSE</small><h2>BRINGING SHERU BHAI&apos;S<br/><em>STORIES TO LIFE.</em></h2></div><p>Adventure, comedy, drama and unexpected moments. Every frame has a personality. Every reel has a twist.</p></div><div className="story-art"><img src="/images/sheru-promo.webp" alt="Sheru Bhai 1000+ AI story reels promotional artwork"/></div><div className="new-worlds">{cards.map(w=><a href={insta} target="_blank" rel="noreferrer" className={"world "+w[3]} key={w[0]}><small>STORY WORLD ↗</small><strong>{w[1]}</strong><h3>{w[0]}</h3><p>{w[2]}</p><b>EXPLORE STORIES →</b></a>)}</div></section><section id="bundle" className="new-bundle"><div><small>✦ THE BIG COLLECTION</small><h2>MEET THE<br/><em>MEGA VIDEO</em><br/>BUNDLE.</h2><p>One legendary collection. A whole lot of Sheru energy. Built for creators who want scroll-stopping stories and endless inspiration.</p><ul><li>✓ 1000+ AI story reels</li><li>✓ Multiple story themes</li><li>✓ Vertical short-form format</li><li>✓ New stories from the Sheru universe</li></ul></div><div className="bundle-visual"><img src="/images/sheru-promo.webp" alt="Sheru Bhai Mega Video Bundle artwork"/><b>1000<sup>+</sup></b><small>AI STORY REELS</small><strong>₹149</strong><span>INTRODUCTORY ONE-TIME PRICE</span><label>CHECKOUT OPENING SOON</label></div></section><section className="new-section"><div className="new-heading"><div><small>✦ MORE THAN JUST REELS</small><h2>ONE LION.<br/><em>SO MANY WORLDS.</em></h2></div><p>From quick laughs to full-on cinematic moments, there is always another Sheru story to discover.</p></div><div className="new-features"><article>🎬 <b>1000+ story reels</b><p>A growing universe of Sheru Bhai stories.</p></article><article>⚡ <b>Ready to post</b><p>Made for vertical short-form content.</p></article><article>🎨 <b>Multiple themes</b><p>Adventure, comedy, drama and more.</p></article><article>💎 <b>Fresh concepts</b><p>Big characters. Bigger moments.</p></article></div></section><section id="instagram" className="new-instagram"><div><small>✦ THE STORY CONTINUES ON INSTAGRAM</small><h2>FOLLOW THE<br/><em>LEGEND.</em></h2><p>New reels. New chaos. More Sheru. Join the community and catch the latest stories first.</p><Link href={insta} target="_blank" className="hot-button"><Instagram/> @SHERUBHAI.OFFICIALO ↗</Link><p className="ig-stats">21 POSTS　•　4,423 FOLLOWERS　•　12 FOLLOWING</p></div><div className="ig-card"><div><img src={avatar} alt="Sheru Bhai"/><b>@sherubhai.officialo</b></div><img className="ig-art" src="/images/sheru-instagram-grid.webp" alt="Sheru Bhai Instagram post gallery preview"/><img className="ig-art" src="/images/sheru-promo.webp" alt="Sheru Bhai Mega Bundle promotional artwork"/><a href={insta} target="_blank" rel="noreferrer">VIEW ALL POSTS ON INSTAGRAM ↗</a></div></section><section className="new-final"><small>✦ YOUR NEXT STORY STARTS HERE</small><h2>READY TO ENTER<br/><em>SHERU&apos;S WORLD?</em></h2><p>Follow the page, explore the stories and stay tuned for the Mega Bundle launch.</p><Link href={insta} target="_blank" className="hot-button"><Instagram/> FOLLOW SHERU BHAI ↗</Link></section><footer className="new-footer"><Link href="/" className="new-brand"><img src={avatar} alt="Sheru Bhai"/><span><b>SHERU BHAI</b><small>OFFICIAL UNIVERSE</small></span></Link><p>One lion. Endless stories.<br/>Made for the scroll generation.</p><div><Link href={insta} target="_blank">Instagram ↗</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div><small>© 2026 SHERU BHAI OFFICIAL. ALL RIGHTS RESERVED.</small></footer></main>}
+import { Check, Instagram, LockKeyhole, Play, Sparkles, Video, Zap } from "lucide-react";
+
+const instagram = "https://www.instagram.com/sherubhai.officialo/";
+
+const benefits = [
+  { icon: Video, title: "5000+ AI story videos", body: "A huge collection of short-form story videos in one bundle." },
+  { icon: Zap, title: "No editing required", body: "Skip complicated editing. Choose a video and get it ready to share." },
+  { icon: Play, title: "Made for content creators", body: "Use the videos as a starting point for your Reels, Shorts and social content." },
+  { icon: Sparkles, title: "A range of story themes", body: "Explore different moods and story styles instead of starting from a blank screen." },
+];
+
+const faqs = [
+  ["What am I getting?", "The Sheru Bhai AI Stories Bundle: a digital collection containing 5,000+ AI story videos."],
+  ["Do I need editing skills?", "No. The collection is presented as ready-to-use videos, so you do not need editing skills to get started."],
+  ["Where can I use the videos?", "They are intended for short-form social content such as Instagram Reels and YouTube Shorts. Always check each platform’s rules and the usage rights supplied with the bundle."],
+  ["How much does it cost?", "The listed introductory price is ₹149 as a one-time payment. There is no active checkout yet."],
+  ["How will I receive the bundle?", "After checkout is activated, the page will explain the delivery process. The download folder will only be shared after a successful payment is verified."],
+  ["Is payment available right now?", "Not yet. PhonePe checkout is being arranged. Please do not send money to personal UPI IDs or anyone claiming to take payment on this page."],
+];
+
+export default function HomePage() {
+  return (
+    <main className="product-page">
+      <div className="announcement"><span>✦</span> THE SHERU BHAI AI STORIES BUNDLE <span>✦</span> 5000+ VIDEOS</div>
+      <header className="product-header">
+        <Link href="/" className="brand-lockup" aria-label="Sheru Bhai home">
+          <img src="/images/sheru-logo.webp" alt="Sheru Bhai lion logo" />
+          <span><b>SHERU BHAI</b><small>OFFICIAL BUNDLE</small></span>
+        </Link>
+        <a className="instagram-link" href={instagram} target="_blank" rel="noreferrer"><Instagram size={17}/> <span>Follow us</span></a>
+      </header>
+
+      <section className="product-hero">
+        <div className="hero-copy">
+          <div className="eyebrow"><Sparkles size={15}/> YOUR CONTENT CREATION SHORTCUT</div>
+          <h1>5000+ STORIES.<br/><em>ZERO EDITING.</em></h1>
+          <p className="hero-lede">Meet the Sheru Bhai AI Stories Bundle — a massive collection of ready-to-use AI story videos for creators who want to spend less time making content and more time sharing it.</p>
+          <div className="hero-checks">
+            <span><Check size={17}/> 5,000+ AI story videos</span>
+            <span><Check size={17}/> Ready to use — no editing required</span>
+            <span><Check size={17}/> One simple digital bundle</span>
+          </div>
+          <div className="purchase-panel">
+            <div><small>INTRODUCTORY ONE-TIME PRICE</small><strong>₹149</strong><span>No subscription shown. Pay once when checkout opens.</span></div>
+            <button className="buy-disabled" type="button" disabled><LockKeyhole size={18}/> PAYMENT COMING SOON</button>
+          </div>
+          <p className="payment-note">PhonePe checkout is being set up. No payment is being accepted on this page right now.</p>
+        </div>
+        <div className="hero-art">
+          <div className="art-glow"/>
+          <img src="/images/sheru-logo.webp" alt="Sheru Bhai crowned lion mascot" className="hero-mascot"/>
+          <div className="floating-tag tag-top">THE CREATOR'S BUNDLE</div>
+          <div className="floating-tag tag-bottom"><b>5000+</b><span>AI STORY VIDEOS</span></div>
+        </div>
+      </section>
+
+      <section className="banner-section" aria-label="Sheru Bhai product banner">
+        <div className="section-kicker">THE BUNDLE AT A GLANCE</div>
+        <img className="product-banner" src="/images/sheru-bundle-banner.svg" alt="Sheru Bhai AI Stories Bundle: 5000 plus ready-to-use videos, no editing required, introductory price 149 rupees. Payment coming soon."/>
+      </section>
+
+      <section className="benefits-section">
+        <div className="section-heading"><div className="section-kicker">WHY CREATORS WILL LOVE IT</div><h2>LESS TIME EDITING.<br/><em>MORE TIME CREATING.</em></h2><p>Starting from scratch takes time. This bundle gives you a library of story videos to explore whenever you need content inspiration.</p></div>
+        <div className="benefit-grid">{benefits.map(({icon: Icon,title,body})=><article className="benefit-card" key={title}><div className="benefit-icon"><Icon size={23}/></div><h3>{title}</h3><p>{body}</p></article>)}</div>
+      </section>
+
+      <section className="how-section">
+        <div className="section-heading"><div className="section-kicker">SIMPLE BY DESIGN</div><h2>FROM BUNDLE TO<br/><em>YOUR NEXT POST.</em></h2></div>
+        <div className="steps-grid"><article><b>01</b><h3>Get the bundle</h3><p>Complete the payment once checkout is available.</p></article><article><b>02</b><h3>Access your videos</h3><p>Follow the delivery instructions shown after a verified purchase.</p></article><article><b>03</b><h3>Choose & share</h3><p>Pick a video that fits your idea and publish it on your chosen platform.</p></article></div>
+      </section>
+
+      <section className="price-section" id="bundle">
+        <div className="price-card">
+          <div className="price-copy"><div className="section-kicker">ONE BUNDLE. ONE PAYMENT.</div><h2>MAKE YOUR<br/><em>CONTENT FLOW.</em></h2><p>Get access to a collection of 5,000+ AI story videos without needing to edit every clip yourself.</p><div className="price-includes"><span><Check size={17}/> 5,000+ AI story videos</span><span><Check size={17}/> Ready-to-use video format</span><span><Check size={17}/> No editing skills needed</span></div></div>
+          <div className="price-box"><small>INTRODUCTORY PRICE</small><strong>₹149</strong><span>ONE-TIME PAYMENT</span><button type="button" disabled><LockKeyhole size={18}/> CHECKOUT COMING SOON</button><p>We will enable secure PhonePe checkout here once the merchant setup is ready.</p></div>
+        </div>
+      </section>
+
+      <section className="faq-section"><div className="section-heading"><div className="section-kicker">GOOD TO KNOW</div><h2>YOUR QUESTIONS.<br/><em>ANSWERED.</em></h2></div><div className="faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
+
+      <section className="last-call"><img src="/images/sheru-logo.webp" alt="" /><div><div className="section-kicker">FOLLOW THE SHERU BHAI UNIVERSE</div><h2>MORE STORIES.<br/><em>MORE SHERU.</em></h2><p>Follow our Instagram page for updates about the bundle and its launch.</p><a href={instagram} target="_blank" rel="noreferrer" className="instagram-cta"><Instagram size={18}/> @sherubhai.officialo</a></div></section>
+
+      <footer className="product-footer"><Link href="/" className="footer-brand">SHERU BHAI <span>OFFICIAL</span></Link><p>Digital product information. Checkout is not active yet.</p><div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><a href={instagram} target="_blank" rel="noreferrer">Instagram ↗</a></div><small>© 2026 Sheru Bhai Official</small></footer>
+    </main>
+  );
+}
