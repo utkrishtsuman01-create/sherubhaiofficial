@@ -50,7 +50,7 @@ export default function HomePage() {
         <div className="hero-art">
           <div className="art-glow"/>
           <img src="/images/sheru-logo.webp" alt="Sheru Bhai crowned lion mascot" className="hero-mascot"/>
-          <div className="floating-tag tag-top">THE CREATOR'S BUNDLE</div>
+          <div className="floating-tag tag-top">THE CREATOR&apos;S BUNDLE</div>
           <div className="floating-tag tag-bottom"><b>5000+</b><span>AI STORY VIDEOS</span></div>
         </div>
       </section>
