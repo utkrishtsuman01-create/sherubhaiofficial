@@ -12,7 +12,7 @@ function ReviewTrack({items}:{items:Review[]}) {
   return <div className="review-track"><div className="review-track-inner">{[...items,...items].map((r,i)=><article className="review-brick" key={r.id+"-"+i}><div className="review-brick-top"><b>{r.reviewer_name}</b><span>{"★".repeat(r.rating)}{"☆".repeat(5-r.rating)}</span></div><p>“{r.review_text}”</p><small>{r.products?.title || "CrazyReels bundle"}</small></article>)}</div></div>;
 }
 export default function HomePage(){
- const [products,setProducts]=useState<Product[]>([]),[search,setSearch]=useState(""),[category,setCategory]=useState("All"),[loading,setLoading]=useState(true),[reviews,setReviews]=useState<Review[]>([]),[added,setAdded]=useState<string|null>(null);
+ const [products,setProducts]=useState<Product[]>([]),[search,setSearch]=useState(""),[category,setCategory]=useState("All"),[loading,setLoading]=useState(true),[reviews,setReviews]=useState<Review[]>([]),[added,setAdded]=useState<string|null>(null),[heroIndex,setHeroIndex]=useState(0);
  useEffect(()=>{
   if(!supabase){setLoading(false);return;}
   Promise.all([
@@ -20,19 +20,19 @@ export default function HomePage(){
    supabase.from("product_reviews").select("id,reviewer_name,rating,review_text,product_id,products(title)").eq("is_published",true).eq("show_on_homepage",true).order("created_at",{ascending:false}).limit(30)
   ]).then(([p,r])=>{setProducts(p.data||[]);setReviews((r.data||[]) as unknown as Review[]);setLoading(false);});
  },[]);
- const categories=useMemo(()=>["All",...Array.from(new Set(products.map(p=>p.category)))],[products]);
+ useEffect(()=>{if(products.length<2)return;const timer=window.setInterval(()=>setHeroIndex(current=>(current+1)%products.length),4500);return()=>window.clearInterval(timer);},[products.length]);\n const activeHeroProduct=products[heroIndex]||products[0];\n const categories=useMemo(()=>["All",...Array.from(new Set(products.map(p=>p.category)))],[products]);
  const visible=products.filter(p=>(category==="All"||p.category===category)&&[p.title,p.short_description,p.category].join(" ").toLowerCase().includes(search.toLowerCase()));
  function add(p:Product){addProductToCart({id:p.id,slug:p.slug,title:p.title,price:Number(p.price),image_url:p.image_url});setAdded(p.id);window.setTimeout(()=>setAdded(current=>current===p.id?null:current),1400);}
  const split=reviews.reduce((rows,r,i)=>{rows[i%2].push(r);return rows;},[[],[]] as Review[][]);
  return <main className="store-page">
   <StoreHeader/>
-  <section className="store-hero"><div className="hero-inner"><div className="hero-copy"><div className="eyebrow"><Sparkles size={14}/> THE NEXT BIG THING IN SHORT-FORM CONTENT</div><h1>Viral Reels.<br/><em>Built to Go Crazy.</em></h1><p>Discover ready-to-use reels bundles for creators, social media managers and brands. Find your next scroll-stopping idea, preview the content and get your creative flow moving.</p><div className="hero-actions">{products[0]?<Link className="primary-btn hero-dynamic-cta" href={"/"+products[0].slug}>Explore {products[0].title} <ArrowRight size={16}/></Link>:<a className="primary-btn" href="#shop">Explore bundles <ArrowRight size={16}/></a>}</div><div className="trust-points"><span><CheckCircle2/> Curated collections</span><span><Zap/> Instant digital access</span><span><ShieldCheck/> Secure checkout soon</span></div></div><div className="hero-art">
-   {products.length>0?<div className="hero-bundle-window"><div className={products.length>1?"hero-bundle-track is-sliding":"hero-bundle-track"}>
-    {[...products,...(products.length>1?products:[])].map((product,index)=><Link className="hero-bundle-card" href={"/"+product.slug} key={product.id+"-hero-"+index}>
+  <section className="store-hero"><div className="hero-inner"><div className="hero-copy"><div className="eyebrow"><Sparkles size={14}/> THE NEXT BIG THING IN SHORT-FORM CONTENT</div><h1>Viral Reels.<br/><em>Built to Go Crazy.</em></h1><p>Discover ready-to-use reels bundles for creators, social media managers and brands. Find your next scroll-stopping idea, preview the content and get your creative flow moving.</p><div className="hero-actions">{activeHeroProduct?<Link className="primary-btn hero-dynamic-cta" href={"/"+activeHeroProduct.slug}>Explore {activeHeroProduct.title} <ArrowRight size={16}/></Link>:<a className="primary-btn" href="#shop">Explore bundles <ArrowRight size={16}/></a>}</div><div className="trust-points"><span><CheckCircle2/> Curated collections</span><span><Zap/> Instant digital access</span><span><ShieldCheck/> Secure checkout soon</span></div></div><div className="hero-art">
+   {products.length>0?<div className="hero-bundle-window"><div className="hero-bundle-track" style={{transform:"translateX(-"+(heroIndex*100)+"%)"}}>
+    {products.map((product)=><Link className="hero-bundle-card" href={"/"+product.slug} key={product.id}>
       <div className="hero-bundle-image-wrap"><img src={product.image_url||"/crazyreels-logo.svg"} alt={product.title}/><span className="hero-bundle-open">Explore {product.title} <ArrowRight size={14}/></span></div>
       <div className="hero-bundle-info"><small>{product.category} · {product.total_videos.toLocaleString("en-IN")} VIDEOS</small><b>{product.title}</b><p>{product.short_description}</p><div className="hero-bundle-bottom"><strong>₹{Number(product.price).toFixed(0)}</strong><span>Open bundle <ArrowRight size={13}/></span></div></div>
     </Link>)}
-   </div></div>:<Link href="#shop" className="hero-bundle-empty"><img src="/crazyreels-logo.svg" alt="CrazyReels"/><b>Your next favourite bundle</b><span>Explore the store <ArrowRight size={14}/></span></Link>}
+   </div>{products.length>1&&<div className="hero-bundle-controls"><button type="button" aria-label="Previous bundle" onClick={()=>setHeroIndex(current=>(current-1+products.length)%products.length)}>‹</button><div>{products.map((product,index)=><button type="button" key={product.id} aria-label={"Show "+product.title} aria-current={heroIndex===index?"true":undefined} className={heroIndex===index?"active":""} onClick={()=>setHeroIndex(index)}/>)}</div><button type="button" aria-label="Next bundle" onClick={()=>setHeroIndex(current=>(current+1)%products.length)}>›</button></div>}</div>:<Link href="#shop" className="hero-bundle-empty"><img src="/crazyreels-logo.svg" alt="CrazyReels"/><b>Your next favourite bundle</b><span>Explore the store <ArrowRight size={14}/></span></Link>}
    <div className="hero-floater"><b>{products.length>0?products.length+"+": "100%"}</b><br/>{products.length>0?"Live bundles":"Digital bundles"}</div>
   </div></div></section>
   <section className="store-container" id="shop">
