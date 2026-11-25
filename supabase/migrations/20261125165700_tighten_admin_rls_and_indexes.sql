@@ -1,6 +1,6 @@
 create schema if not exists private;
 revoke all on schema private from public, anon;
-grant usage on schema private to authenticated;
+grant usage on schema private to authenticated, anon;
 
 create or replace function private.is_store_admin()
 returns boolean language sql stable security definer
@@ -9,7 +9,7 @@ as $$
   select exists (select 1 from public.admin_users where user_id = auth.uid());
 $$;
 revoke all on function private.is_store_admin() from public, anon;
-grant execute on function private.is_store_admin() to authenticated;
+grant execute on function private.is_store_admin() to authenticated, anon;
 
 drop policy if exists "Admins can read admin users" on public.admin_users;
 create policy "Admins can read admin users" on public.admin_users
