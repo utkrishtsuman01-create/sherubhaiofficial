@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sherubhaiofficial.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Sheru Bhai Official — 5,000+ AI Story Reels",
     template: "%s | Sheru Bhai Official",
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#101b3b",
+  themeColor: "#080808",
   colorScheme: "dark",
 };
 
