@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import type { Session } from "@supabase/supabase-js";
-import { BarChart3, Boxes, CircleDollarSign, ClipboardList, ImagePlus, LogOut, PackagePlus, Pencil, PlayCircle, ShieldCheck, Trash2, Users, X, Star, MessageSquare } from "lucide-react";
+import { BarChart3, Boxes, CircleDollarSign, ClipboardList, ImagePlus, LogOut, PackagePlus, Pencil, PlayCircle, ShieldCheck, Trash2, Users, X, MessageSquare } from "lucide-react";
 
 type Product = { id:string; title:string; slug:string; short_description:string; description:string; category:string; price:number; compare_at_price:number|null; total_videos:number; video_format:string; resolution:string; aspect_ratio:string; delivery_method:string; image_url:string|null; preview_video_1:string|null; preview_video_2:string|null; is_published:boolean; created_at:string };
 type Order = { id:string; order_number:number; customer_name:string; customer_email:string; customer_phone:string|null; total:number; payment_status:string; order_status:string; created_at:string };\ntype Review = { id:string; product_id:string; reviewer_name:string; rating:number; review_text:string; show_on_homepage:boolean; is_published:boolean; created_at:string };
