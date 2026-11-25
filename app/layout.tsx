@@ -1,33 +1,30 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sherubhai-official.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
   title: {
-    default: "Sheru Bhai Official — The Mega Video Bundle",
+    default: "Sheru Bhai Official — 5,000+ AI Story Reels",
     template: "%s | Sheru Bhai Official",
   },
   description:
-    "Enter the Sheru Bhai universe. Discover the 5,000+ AI video Mega Bundle for Reels, Shorts and creators.",
+    "Bringing Sheru's stories to life. Explore the Sheru Bhai Official 5,000+ AI story video Mega Bundle for Reels, Shorts and creators.",
   applicationName: "Sheru Bhai Official",
   openGraph: {
-    title: "Sheru Bhai Official — Mega Video Bundle",
-    description: "5,000+ Sheru Bhai AI videos. One legendary collection.",
+    title: "Sheru Bhai Official — The Mega Video Bundle",
+    description: "5,000+ Sheru Bhai AI story videos. One legendary collection.",
     siteName: "Sheru Bhai Official",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sheru Bhai Official — Mega Video Bundle",
-    description: "5,000+ Sheru Bhai AI videos. One legendary collection.",
+    title: "Sheru Bhai Official — The Mega Video Bundle",
+    description: "5,000+ Sheru Bhai AI story videos. One legendary collection.",
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#090909",
+  themeColor: "#101b3b",
   colorScheme: "dark",
 };
 
