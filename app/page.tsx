@@ -9,7 +9,6 @@ import {
   Film,
   Instagram,
   LockKeyhole,
-  Play,
   ShieldCheck,
   Sparkles,
   Zap,
