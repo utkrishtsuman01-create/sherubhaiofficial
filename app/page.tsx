@@ -12,13 +12,11 @@ import {
   ShieldCheck,
   Sparkles,
   Zap,
-  Clapperboard,
   Layers3,
   Heart,
   Compass,
   GraduationCap,
   Download,
-  BadgeCheck,
 } from "lucide-react";
 
 const instagramUrl = "https://www.instagram.com/sherubhai.officialo/";
