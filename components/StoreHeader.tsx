@@ -23,6 +23,6 @@ export default function StoreHeader() {
   }, []);
   return <header className="store-header">
     <Link href="/" className="store-brand"><img src="/crazyreels-logo.svg" alt="CrazyReels logo"/><span><b>CrazyReels</b><small>Premium Reels for Your Growth</small></span></Link>
-    <nav><Link href="/">Home</Link><Link href="/#shop">Shop</Link><Link href="/cart" className="cart-icon-link" aria-label={`Shopping cart, ${count} items`}><ShoppingCart size={21}/><span>Cart</span>{count > 0 && <b className="cart-count">{count > 99 ? "99+" : count}</b>}</Link></nav>
+    <nav><Link href="/">Home</Link><Link href="/#shop">Shop</Link><Link href="/cart" className="cart-icon-link" aria-label={`Shopping cart, ${count} items`}><ShoppingCart size={21}/>{count > 0 && <b className="cart-count">{count > 99 ? "99+" : count}</b>}</Link></nav>
   </header>;
 }
