@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
-import {ArrowRight,Boxes,CheckCircle2,LockKeyhole,Search,ShieldCheck,Sparkles,Video,Zap,ShoppingCart,Star} from "lucide-react";
+import {ArrowRight,Boxes,CheckCircle2,LockKeyhole,Search,ShieldCheck,Sparkles,Video,Zap,ShoppingCart} from "lucide-react";
 import {supabase} from "@/lib/supabase";
 import StoreHeader from "@/components/StoreHeader";
 import {addProductToCart} from "@/lib/cart";
