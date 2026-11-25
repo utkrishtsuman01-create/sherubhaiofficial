@@ -67,8 +67,8 @@ a,button { -webkit-tap-highlight-color: transparent; }
 .stage-label { position:absolute; z-index:5; bottom:4%; display:flex; align-items:center; gap:9px; color:#d6bb82; font-size:7px; font-weight:900; letter-spacing:.2em; white-space:nowrap; }
 .stage-label span { width:24px; height:1px; background:var(--gold); }
 .story-tile { position:absolute; z-index:4; width:29%; height:22%; min-height:100px; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; padding:13px; border:1px solid rgba(255,222,159,.65); border-radius:8px; box-shadow:0 12px 30px rgba(0,0,0,.55),0 0 18px rgba(214,166,79,.18),inset 0 0 30px rgba(255,255,255,.07); background:#15120f; }
-.story-tile:before { content:""; position:absolute; inset:0; opacity:.95; z-index:-1; }
-.story-tile:after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.92),transparent 75%); }
+.story-tile:before { content:""; position:absolute; inset:0; opacity:.95; z-index:0; }
+.story-tile:after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.92),transparent 75%); z-index:1; }
 .tile-number,.tile-spark,.story-tile strong,.story-tile small { position:relative; z-index:2; }
 .tile-number { position:absolute; top:8px; left:10px; color:#f6dfa0; font-size:8px; letter-spacing:.12em; }
 .tile-spark { position:absolute; right:10px; top:6px; color:#ffdc8b; text-shadow:0 0 12px #ffb52a; }
