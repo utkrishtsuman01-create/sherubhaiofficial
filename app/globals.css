@@ -88,3 +88,19 @@
  .review-admin-form{grid-template-columns:1fr}
  .admin-review-row{align-items:flex-start;flex-direction:column}
 }
+
+/* Match the hero layout while live products load, avoiding a flash of the empty-store fallback */
+.hero-loading-shell{max-width:1380px;min-height:450px;margin:auto;padding:42px clamp(20px,4vw,58px);border-radius:30px;background:linear-gradient(115deg,#f3eaff,#fff2f8 58%,#f1f6ff);display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;overflow:hidden}
+.hero-loading-copy{display:grid;justify-items:start;gap:15px}
+.hero-loading-kicker{font-size:10px;font-weight:900;letter-spacing:.18em;color:#7438f2}
+.hero-loading-line,.hero-loading-pill,.hero-loading-art>div{background:linear-gradient(90deg,#e9defa 20%,#f8f1ff 45%,#e9defa 70%);background-size:220% 100%;animation:hero-shimmer 1.25s ease-in-out infinite}
+.hero-loading-line{height:20px;border-radius:9px;width:min(100%,440px)}
+.hero-loading-line-large{height:58px;width:min(100%,500px)}
+.hero-loading-line-medium{width:min(90%,390px)}
+.hero-loading-line-short{width:min(70%,290px)}
+.hero-loading-pill{height:46px;width:165px;border-radius:12px;margin-top:12px}
+.hero-loading-art{display:grid;place-items:center;min-height:300px}
+.hero-loading-art>div{width:min(80%,330px);aspect-ratio:1;border-radius:28px}
+@keyframes hero-shimmer{to{background-position:-220% 0}}
+@media(max-width:900px){.hero-loading-shell{min-height:410px;padding:32px 24px;gap:16px}}
+@media(max-width:620px){.hero-loading-shell{min-height:540px;grid-template-columns:1fr;padding:30px 20px 62px;gap:10px}.hero-loading-line-large{height:42px}.hero-loading-art{min-height:190px}.hero-loading-art>div{width:190px}}
