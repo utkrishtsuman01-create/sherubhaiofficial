@@ -29,7 +29,7 @@ export default function HomePage(){
  return <main className="store-page">
   <StoreHeader/>
   <section className="store-hero">
-   {products.length>0?<div className="hero-carousel-shell">
+   {loading?<div className="hero-loading-shell" aria-label="Loading CrazyReels homepage"><div className="hero-loading-copy"><span className="hero-loading-kicker">CRAZYREELS</span><div className="hero-loading-line hero-loading-line-large"/><div className="hero-loading-line hero-loading-line-medium"/><div className="hero-loading-line hero-loading-line-short"/><div className="hero-loading-pill"/></div><div className="hero-loading-art"><div/></div></div>:products.length>0?<div className="hero-carousel-shell">
     <div className="hero-carousel-track" style={{transform:"translateX(-"+(heroIndex*100)+"%)"}}>
      {products.map((product,index)=><article className="hero-slide" key={product.id} aria-hidden={heroIndex!==index}>
       <div className="hero-copy"><div className="eyebrow"><Sparkles size={14}/> THE NEXT BIG THING IN SHORT-FORM CONTENT</div><h1>Meet your next<br/><em>viral bundle.</em></h1><h2 className="hero-product-title">{product.title}</h2><p>{product.short_description}</p><div className="hero-product-meta"><span>{product.total_videos.toLocaleString("en-IN")}+ VIDEOS</span><strong>₹{Number(product.price).toFixed(0)}</strong><small>{product.category}</small></div><div className="hero-actions"><Link className="primary-btn hero-dynamic-cta" href={"/"+product.slug}>Explore this bundle <ArrowRight size={16}/></Link></div><div className="trust-points"><span><CheckCircle2/> Curated collections</span><span><Zap/> Instant digital access</span><span><ShieldCheck/> Secure checkout soon</span></div></div>
